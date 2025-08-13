@@ -19,7 +19,7 @@ const Employee = () => {
     const [formErrors, setFormErrors] = useState({});
     const gridRef = useRef();
 
-    const API_URL = "http://localhost:5000/api";
+    const API_URL = import.meta.env.API || "http://localhost:5000/api";
 
     const columnDefs = [
         { headerName: 'Name', field: 'name', filter: true, sortable: true, flex: 1, minWidth: 150 },
@@ -173,7 +173,7 @@ const Employee = () => {
             <div className="header-section">
                 <h1>Employee Management</h1>
                 <div className="filter-control">
-                   Filter by Name <input
+                    Filter by Name <input
                         type="text"
                         placeholder="Search employees..."
                         value={filterText}
@@ -260,7 +260,7 @@ const Employee = () => {
                         paginationPageSize={10}
                         domLayout="autoHeight"
                         suppressCellFocus={true}
-                            theme="legacy" 
+                        theme="legacy"
                         onGridReady={(params) => params.api.sizeColumnsToFit()}
                     />
                 )}
