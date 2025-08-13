@@ -19,7 +19,7 @@ const Employee = () => {
     const [formErrors, setFormErrors] = useState({});
     const gridRef = useRef();
 
-    const API_URL = import.meta.env.API || "http://localhost:5000/api";
+    const API_URL = "https://employees-n9be.onrender.com/api"|| "http://localhost:5000/api";
 
     const columnDefs = [
         { headerName: 'Name', field: 'name', filter: true, sortable: true, flex: 1, minWidth: 150 },
