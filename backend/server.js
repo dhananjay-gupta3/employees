@@ -1,11 +1,12 @@
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors'
 import connectDB from './config/db.js';
 import employee from './routes/employee.js'
 const app = express();
-
+const clientOrigin = process.env.CLIENT_ORIGIN || 'http://localhost:5173';
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: clientOrigin,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true
 }));
